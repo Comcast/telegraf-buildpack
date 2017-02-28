@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#
+# Copyright 2017 Comcast Cable Communications Management, LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# bin/compile <build-dir> <cache-dir>
+
+set -e            # fail fast
+set -o pipefail   # do not ignore exit codes when piping output
+set -u            # treat  unset variables as an error
+# set -x          # enable debugging
+
+# Configure directories
+build_dir=$1
+cache_dir=$2
+
+compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
+compile_buildpack_bin=$compile_buildpack_dir/bin
+
+cd $build_dir
+mkdir -p bin
+
+for f in telegraf.tgz cf.tgz jq; do
+  translated_url="$(
+    $compile_buildpack_dir/compile-extensions/bin/download_dependency $f /tmp
+  )"
+  echo "Downloaded [$translated_url]"
+done
+
+tar xfz /tmp/telegraf.tgz --strip-components 4 --wildcards -C bin './*/usr/bin/telegraf'
+tar xfz /tmp/cf.tgz -C bin
+chmod 755 /tmp/jq && mv /tmp/jq bin
+
+cp -pr $compile_buildpack_dir/conf .
+cp $compile_buildpack_bin/config-*.sh bin/
+cp $compile_buildpack_bin/entrypoint.sh .

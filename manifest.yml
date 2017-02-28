@@ -1,0 +1,43 @@
+---
+language: telegraf
+exclude_files:
+- ".git/"
+- ".gitignore"
+- ".gitmodules"
+- ".rspec"
+- "*Gemfile*"
+- cf_spec/
+- spec/
+- log/
+- test/
+- buildpack-packager/
+- telegraf_buildpack-*v*.zip
+url_to_dependency_map:
+- match: telegraf.tgz
+  name: telegraf
+  version: 1.0.0
+- match: cf.tgz
+  name: cf
+  version: 6.21.1
+- match: jq
+  name: jq
+  version: 1.5
+dependencies:
+- name: telegraf
+  version: 1.0.0
+  uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.0.0_linux_amd64.tar.gz
+  md5: c3e2562a81dec8ecc9696b263d05d249
+  cf_stacks:
+  - cflinuxfs2
+- name: cf
+  version: 6.21.1
+  uri: https://goo.gl/SCnwjb
+  md5: cdaab0ef3884c4e53f4263d6dfbaf33c
+  cf_stacks:
+  - cflinuxfs2
+- name: jq
+  version: 1.5
+  uri: https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+  md5: 6a342dbb17b2f2ea4ec0e64d2157614d
+  cf_stacks:
+  - cflinuxfs2
