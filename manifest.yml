@@ -15,7 +15,7 @@ exclude_files:
 url_to_dependency_map:
 - match: telegraf.tgz
   name: telegraf
-  version: 1.0.0
+  version: 1.2.1
 - match: cf.tgz
   name: cf
   version: 6.21.1
@@ -24,9 +24,9 @@ url_to_dependency_map:
   version: 1.5
 dependencies:
 - name: telegraf
-  version: 1.0.0
-  uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.0.0_linux_amd64.tar.gz
-  md5: c3e2562a81dec8ecc9696b263d05d249
+  version: 1.2.1
+  uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.2.1_linux_amd64.tar.gz
+  md5: 3eb41e5581a7ec78379ace9eb4c1558c
   cf_stacks:
   - cflinuxfs2
 - name: cf
