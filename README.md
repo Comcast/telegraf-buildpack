@@ -7,23 +7,23 @@ InfluxData Telegraf as an application in Cloud Foundry.
 
 1. Make sure you have fetched submodules
 
-  ```sh
-  git submodule update --init
-  ```
+    ```sh
+    git submodule update --init
+    ```
 
 1. Get latest buildpack dependencies
 
-  ```sh
-  BUNDLE_GEMFILE=cf.Gemfile bundle
-  ```
+    ```sh
+    BUNDLE_GEMFILE=cf.Gemfile bundle
+    ```
 
 1. Build the buildpack
 
-  ```sh
-  BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager [ --cached | --uncached ]
-  ```
+    ```sh
+    BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager [ --cached | --uncached ]
+    ```
 
-1. Use in Cloud Foundry
+### Use in Cloud Foundry
 
   Upload the buildpack to your Cloud Foundry and optionally specify it by name
 
