@@ -43,6 +43,8 @@ set -u            # treat  unset variables as an error
 # [global_tags]
 #   country = "us"
 #   state = "pa"
+#   #XVLF#
+#   GREEN_ZONE_PROXY = 192.168.1.2:8080
 
 TELEGRAF_CONFIG_DIRECTORY=${TELEGRAF_CONFIG_DIRECTORY:-conf}
 mkdir -p $TELEGRAF_CONFIG_DIRECTORY
