@@ -26,7 +26,7 @@ dependencies:
 - name: telegraf
   version: 1.4.4
   uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.4.4_linux_amd64.tar.gz
-  md5: 251258e8bfcac9e4e250fb56b1b87d25
+  md5: faac30a3cf29a18f96132460a3e041c1
   cf_stacks:
   - cflinuxfs2
 - name: cf
