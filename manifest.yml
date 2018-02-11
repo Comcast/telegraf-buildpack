@@ -15,24 +15,24 @@ exclude_files:
 url_to_dependency_map:
 - match: telegraf.tgz
   name: telegraf
-  version: 1.4.4
+  version: 1.5.2
 - match: cf.tgz
   name: cf
-  version: 6.21.1
+  version: 6.34.1
 - match: jq
   name: jq
   version: 1.5
 dependencies:
 - name: telegraf
-  version: 1.4.4
-  uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.4.4_linux_amd64.tar.gz
-  sha256: 75d543ed56629003b226cd44a9f904d612c62ea382fbf03dd10275f14b2ae61c
+  version: 1.5.2
+  uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.5.2_linux_amd64.tar.gz
+  sha256: be97ded65f92c7c7d398275c1dca8c2abaf7d16aefadd52872f906c42f1307bf
   cf_stacks:
   - cflinuxfs2
 - name: cf
-  version: 6.21.1
-  uri: https://goo.gl/SCnwjb
-  sha256: a90be63743700679280d34be1193d4ba9d289c5a14cb0546d750eb813d38bf29
+  version: 6.34.1
+  uri: https://goo.gl/mV34pE
+  sha256: 95f25b19ad7645124752072b595ae9e7df66fc7fb48f633b63e7d9d7a9e0b1bc
   cf_stacks:
   - cflinuxfs2
 - name: jq
