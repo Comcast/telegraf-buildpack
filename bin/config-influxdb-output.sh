@@ -19,7 +19,7 @@ set -o pipefail   # do not ignore exit codes when piping output
 set -u            # treat  unset variables as an error
 # set -x          # enable debugging
 
-# Generate global_tags.conf file from VCAP_SERVICES
+# Generate influxdb.conf file from VCAP_SERVICES
 # Service name must start with "influx"
 # Example user provided service:
 #   cf cups influxdb -p url,database,retention_policy
