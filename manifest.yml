@@ -24,7 +24,7 @@ url_to_dependency_map:
   version: 1.6
 dependencies:
 - name: telegraf
-  version: 1.14.3
+  version: 1.25.2
   uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.25.2_linux_amd64.tar.gz
   sha256: 510bde1bdfcc8465a5864c7d8e5848fb21dcb4940175137ab665133f1edfecdc
   cf_stacks:
