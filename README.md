@@ -20,7 +20,7 @@ InfluxData Telegraf as an application in Cloud Foundry.
 1. Build the buildpack
 
     ```sh
-    BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager [ --cached | --uncached ]
+    BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager [ --cached | --uncached ] [--stack=STACK | --any-stack]
     ```
 
 ### Use in Cloud Foundry
