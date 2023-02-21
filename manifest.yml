@@ -15,7 +15,7 @@ exclude_files:
 url_to_dependency_map:
 - match: telegraf.tgz
   name: telegraf
-  version: 1.14.3
+  version: 1.25.2
 - match: cf.tgz
   name: cf
   version: 6.51.0
