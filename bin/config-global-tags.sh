@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set -e            # fail fast
-set -o pipefail   # do not ignore exit codes when piping output
-set -u            # treat  unset variables as an error
+set -e          # fail fast
+set -o pipefail # do not ignore exit codes when piping output
+set -u          # treat  unset variables as an error
 # set -x          # enable debugging
 
 # Generate global_tags.conf file from VCAP_SERVICES
@@ -45,9 +45,9 @@ set -u            # treat  unset variables as an error
 #   state = "pa"
 
 TELEGRAF_CONFIG_DIRECTORY=${TELEGRAF_CONFIG_DIRECTORY:-conf}
-mkdir -p $TELEGRAF_CONFIG_DIRECTORY
+mkdir -p "$TELEGRAF_CONFIG_DIRECTORY"
 
-jq <<< $VCAP_SERVICES > $TELEGRAF_CONFIG_DIRECTORY/global_tags.conf -r '
+jq <<<"$VCAP_SERVICES" >"$TELEGRAF_CONFIG_DIRECTORY"/global_tags.conf -r '
   flatten[]
   |select(.name|startswith("tags"))
   |.credentials
