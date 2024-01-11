@@ -15,29 +15,32 @@ exclude_files:
 url_to_dependency_map:
   - match: telegraf.tgz
     name: telegraf
-    version: 1.25.2
+    version: 1.29.2
   - match: cf.tgz
     name: cf
-    version: 6.51.0
+    version: 7.7.7
   - match: jq
     name: jq
-    version: 1.6
+    version: 1.7.1
 dependencies:
   - name: telegraf
-    version: 1.25.2
-    uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.25.2_linux_amd64.tar.gz
-    sha256: 510bde1bdfcc8465a5864c7d8e5848fb21dcb4940175137ab665133f1edfecdc
+    version: 1.29.2
+    uri: https://dl.influxdata.com/telegraf/releases/telegraf-1.29.2_linux_amd64.tar.gz
+    sha256: 79edf49d7018dec41a3622c841e9f3cca2be8a85e841759a3590e456815885c1
     cf_stacks:
       - cflinuxfs3
+      - cflinuxfs4
   - name: cf
-    version: 6.51.0
-    uri: https://bit.ly/3i0RtcI
-    sha256: cf49127bf52c139e608d76424c77aa0123291897ac6d121a432bdad4ba7a4b58
+    version: 7.7.7
+    uri: https://s3-us-west-1.amazonaws.com/v7-cf-cli-releases/releases/v7.7.7/cf7-cli_7.7.7_linux_x86-64.tgz
+    sha256: 5667ccef9decccf8c5af10c56819e512b384a029bb11982b1faae57bd0bfc4ff
     cf_stacks:
       - cflinuxfs3
+      - cflinuxfs4
   - name: jq
-    version: 1.6
-    uri: https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
-    sha256: af986793a515d500ab2d35f8d2aecd656e764504b789b66d7e1a0b727a124c44
+    version: 1.7.1
+    uri: https://github.com/jqlang/jq/releases/download/jq-1.7.1/jq-linux-amd64
+    sha256: 5942c9b0934e510ee61eb3e30273f1b3fe2590df93933a93d7c58b81d19c8ff5
     cf_stacks:
       - cflinuxfs3
+      - cflinuxfs4
