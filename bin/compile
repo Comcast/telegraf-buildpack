@@ -43,7 +43,7 @@ for f in telegraf.tgz cf.tgz jq; do
 done
 
 tar xfz /tmp/telegraf.tgz --strip-components 4 --wildcards -C bin './*/usr/bin/telegraf'
-tar xfz /tmp/cf.tgz -C bin
+tar xfz /tmp/cf.tgz --wildcards -C bin 'cf*'
 chmod 755 /tmp/jq && mv /tmp/jq bin
 
 cp -pr "$compile_buildpack_dir"/conf .
