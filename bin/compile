@@ -16,24 +16,28 @@
 
 # bin/compile <build-dir> <cache-dir>
 
-set -e            # fail fast
-set -o pipefail   # do not ignore exit codes when piping output
-set -u            # treat  unset variables as an error
-# set -x          # enable debugging
+set -e          # fail fast
+set -o pipefail # do not ignore exit codes when piping output
+set -u          # treat  unset variables as an error
+# set -x        # enable debugging
 
 # Configure directories
 build_dir=$1
-cache_dir=$2
+# cache_dir=$2 # no caching
 
-compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
+compile_buildpack_dir=$(
+  cd "$(dirname "$0")"
+  cd ..
+  pwd
+)
 compile_buildpack_bin=$compile_buildpack_dir/bin
 
-cd $build_dir
+cd "$build_dir"
 mkdir -p bin
 
 for f in telegraf.tgz cf.tgz jq; do
   translated_url="$(
-    $compile_buildpack_dir/compile-extensions/bin/download_dependency $f /tmp
+    "$compile_buildpack_dir"/compile-extensions/bin/download_dependency "$f" /tmp
   )"
   echo "Downloaded [$translated_url]"
 done
@@ -42,6 +46,6 @@ tar xfz /tmp/telegraf.tgz --strip-components 4 --wildcards -C bin './*/usr/bin/t
 tar xfz /tmp/cf.tgz -C bin
 chmod 755 /tmp/jq && mv /tmp/jq bin
 
-cp -pr $compile_buildpack_dir/conf .
-cp $compile_buildpack_bin/config-*.sh bin/
-cp $compile_buildpack_bin/entrypoint.sh .
+cp -pr "$compile_buildpack_dir"/conf .
+cp "$compile_buildpack_bin"/config-*.sh bin/
+cp "$compile_buildpack_bin"/entrypoint.sh .

@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PATH=$PWD/bin:$PATH
+PATH="$PWD/bin:$PATH"
 
 TELEGRAF_CONFIG_PATH=${TELEGRAF_CONFIG_PATH:-telegraf.conf}
 export TELEGRAF_CONFIG_PATH
@@ -24,4 +24,4 @@ TELEGRAF_CONFIG_DIRECTORY=${TELEGRAF_CONFIG_DIRECTORY:-conf}
 config-influxdb-output.sh
 config-global-tags.sh
 
-exec telegraf -config-directory $TELEGRAF_CONFIG_DIRECTORY
+exec telegraf -config-directory "$TELEGRAF_CONFIG_DIRECTORY"

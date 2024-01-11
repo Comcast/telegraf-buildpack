@@ -16,7 +16,7 @@
 
 # bin/detect <build-dir>
 
-if [ -f $1/telegraf.conf ]; then
+if [[ -f $1/telegraf.conf ]]; then
   echo telegraf && exit 0
 else
   exit 1
