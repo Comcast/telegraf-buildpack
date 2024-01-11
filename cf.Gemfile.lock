@@ -17,11 +17,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     kwalify (0.7.2)
-    minitest (5.17.0)
+    minitest (5.20.0)
     semantic (1.6.1)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -37,7 +37,7 @@ DEPENDENCIES
   buildpack-packager!
 
 RUBY VERSION
-   ruby 2.6.8p205
+   ruby 2.6.10p210
 
 BUNDLED WITH
    1.17.2
