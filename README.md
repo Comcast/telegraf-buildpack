@@ -11,16 +11,16 @@ InfluxData Telegraf as an application in Cloud Foundry.
    git submodule update --init
    ```
 
-1. Get latest buildpack dependencies
+2. Get latest buildpack dependencies
 
    ```sh
-   BUNDLE_GEMFILE=cf.Gemfile bundle
+   BUNDLE_GEMFILE=cf.Gemfile bundle install
    ```
 
-1. Build the buildpack
+3. Build the buildpack
 
    ```sh
-   BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager [ --cached | --uncached ] [--stack=STACK | --any-stack]
+   BUNDLE_GEMFILE=cf.Gemfile bundle exec buildpack-packager --cached --any-stack
    ```
 
 ## Use in Cloud Foundry
