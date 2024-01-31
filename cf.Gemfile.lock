@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/cloudfoundry/buildpack-packager
-  revision: 080f6fb773bf151dfae87a22d6852749d6be968a
-  tag: v2.3.22
+  revision: f88bfee41cf46d5b6ea487d6c30a99ed7c0e51eb
+  tag: v2.3.23
   specs:
-    buildpack-packager (2.3.22)
+    buildpack-packager (2.3.23)
       activesupport (~> 4.1)
       kwalify (~> 0)
       semantic
@@ -17,11 +17,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     kwalify (0.7.2)
-    minitest (5.20.0)
+    minitest (5.21.2)
     semantic (1.6.1)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
@@ -31,13 +31,14 @@ GEM
     unicode-display_width (1.8.0)
 
 PLATFORMS
+  aarch64-linux
   ruby
 
 DEPENDENCIES
   buildpack-packager!
 
 RUBY VERSION
-   ruby 2.6.10p210
+   ruby 3.3.0p0
 
 BUNDLED WITH
-   1.17.2
+   2.5.3
