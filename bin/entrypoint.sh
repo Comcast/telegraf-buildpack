@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright 2017 Comcast Cable Communications Management, LLC
+# Copyright 2024 Comcast Cable Communications Management, LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,11 +17,10 @@
 PATH="$PWD/bin:$PATH"
 
 TELEGRAF_CONFIG_PATH=${TELEGRAF_CONFIG_PATH:-telegraf.conf}
-export TELEGRAF_CONFIG_PATH
 
 TELEGRAF_CONFIG_DIRECTORY=${TELEGRAF_CONFIG_DIRECTORY:-conf}
 
 config-influxdb-output.sh
 config-global-tags.sh
 
-exec telegraf -config-directory "$TELEGRAF_CONFIG_DIRECTORY"
+exec telegraf -config-directory "$TELEGRAF_CONFIG_DIRECTORY" --config "$TELEGRAF_CONFIG_PATH"
